@@ -1,19 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import User from './user'
-
-function App() {
-  const [counter, setCounter] = useState(0)
-
-  return  <>
-      <h1>hello react 19</h1>
-      <h1>Counter val : {counter}</h1>
-      <User />
-      <button onClick={()=>setCounter(counter+1)}>Increase Counter</button>
-    </>
-  
+import MyApp from './Headers'
+function App(){
+     return (
+      <div>
+        <MyApp />
+      <h1>hello</h1>
+      <h1>hello from react</h1></div>
+     )
+     
+     
 }
-
-export default App
+export default App;
