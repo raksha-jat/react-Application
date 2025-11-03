@@ -6,6 +6,9 @@
 //       <h1>hello</h1>
 //       <h1>hello from react</h1></div>
 //      )
+
+import { useState } from "react";
+
      
      
 // }
@@ -63,9 +66,11 @@
 // const Fruit=(name)=>{
 //     alert(name);
 // }
-import { useState } from "react"
+// import { useState } from "react"
+// import Counter from "./counter";
+
 //  import { ClickFunction,Fruit } from "./click&function";
-function App(){
+// function App(){
   // const name="Raksha Jat";
   // const userObj={
   //   name:"raksha jat",
@@ -135,14 +140,65 @@ function App(){
     //   <button onClick={handleFruit}>change Fruit</button>
     //   </div>
     //  )
+      
 
-     return(
-      <div>
-      <button onClick={handleFruit}>change Fruit</button>
-      </div>
-     )
-  }
+    //with state in react
+  //   const [fruit,setFruit]=useState("Apple");
+  //   const handleFruit=()=>{
+  //     setFruit("Banana");
+  //   }
+  //    return(
+  //     <div>
+  //       <h2>{fruit}</h2>
+  //     <button onClick={handleFruit}>change Fruit</button>
+  //     <Counter />
+  //     </div>
+  //    )
+  // }
 
+// import User from "./Props1";
+// 
 
+import Skills,{RadioButon} from "./Skills";
 
-export default App
+function App(){
+  // const [val,setValue]=useState("");
+  //   const [val1,setValue1]=useState("");
+  //  const [val2,setValue2]=useState("");
+  // return(
+  //   <div>
+  //     <h1>Get Input Field value</h1>
+  //     <form action="" method="get">
+  //     <input type="text" value={val} onChange={(event)=>setValue(event.target.value)} placeholder='Enter User Name' /><br /><br />
+      
+     
+  //     <input type="password"  value={val1} onChange={(event)=>setValue1(event.target.value)} placeholder="enter password"  /><br /><br />
+  //     {/* <button onClick={()=>setValue1("")}>clear password</button><br /> */}
+  //     <input type="email"  value={val2} onChange={(event)=>setValue2(event.target.value)} placeholder="enter email"  /><br /><br />
+  //     {/* <button onClick={()=>setValue2("")}>clear Email</button><br /> */}
+  //     <br /><br />
+  //     <button>Submit</button>
+  //      <button onClick={()=>{setValue('');setValue1('');setValue2('')}} >Clear Value</button><br />
+  //     <br /><br />
+  //     <h3>{val}</h3>
+  //     <h3>{val1}</h3>
+  //    <h3>{val2}</h3>
+
+  //     </form>
+  //   </div>
+  // )
+
+  // CHECKBOXES
+  return(
+    <div>
+      <h2>Handle Checkbox in React JS</h2>
+ <Skills />
+   <h2>HANDLE RADIO AND DROPDOWN</h2>
+ <RadioButon />
+    </div>
+  )
+ 
+}
+
+export default App;
+
