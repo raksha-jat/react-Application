@@ -7,7 +7,8 @@
 //       <h1>hello from react</h1></div>
 //      )
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Counter from "./counter";
 
      
      
@@ -159,9 +160,12 @@ import { useState } from "react";
 // import User from "./Props1";
 // 
 
-import Skills,{RadioButon} from "./Skills";
 
-function App(){
+// import Skills,{RadioButon,Looping,ReuseComponentInLoop} from "./Skills";
+
+// import Clock from "./Clock";
+// import College1 from "./College";
+// function App(){
   // const [val,setValue]=useState("");
   //   const [val1,setValue1]=useState("");
   //  const [val2,setValue2]=useState("");
@@ -189,16 +193,253 @@ function App(){
   // )
 
   // CHECKBOXES
-  return(
-    <div>
-      <h2>Handle Checkbox in React JS</h2>
- <Skills />
-   <h2>HANDLE RADIO AND DROPDOWN</h2>
- <RadioButon />
-    </div>
-  )
+  // const [color,setColor]=useState('green')
+
+
+  //array nested looping with component
+// const collegeData=[
+//         {
+//             name:"IET Alwar",
+//             city:"Alwar",
+//             website:"www.iet.com",
+//             student:[
+//                 {
+//                     name:"Anil sidhu",
+//                     age:'29',
+//                     email:'anil@test.com'
+//                 },
+//                  {
+//                     name:"peter",
+//                     age:'24',
+//                     email:'peter@test.com'
+//                 },
+//                  {
+//                     name:"john snow",
+//                     age:'30',
+//                     email:'john@test.com'
+//                 }
+//             ]
+//         },
+//         {
+//             name:"IIT kota",
+//             city:"rajisthan",
+//             website:"www.iit.com",
+//             student:[
+//                 {
+//                     name:"Anil sidhu",
+//                     age:'29',
+//                     email:'anil@test.com'
+//                 },
+//              {
+//                     name:"peter",
+//                     age:'24',
+//                     email:'peter@test.com'
+//                 },
+//                  {
+//                     name:"john snow",
+//                     age:'30',
+//                     email:'john@test.com'
+//                 }
+//             ]
+//         },
+//         {
+//             name:"IT banglore",
+//             city:"banglore",
+//             website:"www.it.com",
+//             student:[
+//                 {
+//                     name:"Anil sidhu",
+//                     age:'29',
+//                     email:'anil@test.com'
+//                 },
+//              {
+//                     name:"peter",
+//                     age:'24',
+//                     email:'peter@test.com'
+//                 },
+//                  {
+//                     name:"john snow",
+//                     age:'30',
+//                     email:'john@test.com'
+//                 }
+//             ]
+//         },
+//         {
+//             name:"Iet Alwar",
+//             city:"Alwar",
+//             website:"www.iet.com",
+//             student:[
+//                 {
+//                     name:"Anil sidhu",
+//                     age:'29',
+//                     email:'anil@test.com'
+//                 }
+//             ]
+//         },
+
+
+//     ]
+
+//   return(
+//     <div>
+//       {/* <h2>Handle Checkbox in React JS</h2>
+//  <Skills />
+//    <h2>HANDLE RADIO AND DROPDOWN</h2>
+//  <RadioButon /> */}
+//  {/* <Looping /> */}
+//  {/* <ReuseComponentInLoop /> */}
+
+//  {/* <h1>Digital Clock in React JS </h1>
+//  <select onChange={(event)=> setColor(event.target.value)} >
+//   <option value="red">Red</option>
+//    <option value="blue">Blue</option>
+//     <option value="green">Green</option>
+//      <option value="orange">Orange</option>
+//  </select>
+//  <Clock color={color}/> */}
+//      <div>
+//             <h2>Array Nested Looping with Component</h2>
+//             {
+//                 collegeData.map((college,index)=>{
+//                    return <div key={index} ><hr />
+// <College1 college={college}/>
+//                                        </div>
+//                 })
+//             }
+//         </div>
+
+//     </div>
+//   )
  
+// }
+
+// export default App;
+
+
+
+//hooks   :   useEffect hook
+
+// function App(){
+//     const [counter,setCounter]=useState(0);
+//     const [data,setData]=useState(0);
+//     useEffect(()=>{
+// //  callOnce();
+//  counterFunction();
+//     },[counter])
+   
+//     useEffect(()=>{
+//       callOnce();
+//     })
+//     function counterFunction(){
+//       console.log("counter function",counter)
+//     }
+//   function callOnce(){
+//     console.log("callOnce function called");
+//   }
+
+ 
+//   return(
+//     <div>
+//       <h1>useEffect Hook</h1>
+//       <button onClick={()=>setCounter(counter+1)}>counter {counter}</button>
+//       <button onClick={()=>setData(data+1)}>data {data}</button>
+//     </div>
+//   )
+
+
+//  const [counter,setCounter]=useState(0);
+//  const [data,setData]=useState(0);
+//  const [display, setdisplay]=useState(false);
+// return(
+//   <div>
+//     {
+//     display? <Counter counter={counter} data={data}/>:"there's no data found"
+//     }
+//     {/* <h1>handle Props side effect with useEffect</h1> */}
+    
+//      <button onClick={()=>setCounter(counter+1)}>counter</button>
+//      <button onClick={()=>setData(data+1)}>data</button>
+//      <button onClick={()=>setdisplay(!display)}>Toggle</button>
+
+//   </div>
+// )
+// }
+
+// export default App;
+
+
+// Styling in react js
+
+function App(){
+  const [cardStyle,setcardStyle]=useState(
+    {border:'1px solid #ebd9d9ff',width:'190px', boxShadow:'1px 2px 3px 0px #cccccc57',margin:'10px'}
+  )
+
+   const [grid,setGrid]=useState(true);
+  const updateTheme=(bgColor,textColor)=>{
+   setcardStyle({...cardStyle,backgroundColor:bgColor,color:textColor});
+  
+  } 
+  // const cardStyle={border:'1px solid #ebd9d9ff',width:'200px', boxShadow:'1px 2px 3px 0px #cccccc57',margin:'10px'};
+  return(
+    <>
+      <h2 style={{color: 'red',backgroundColor:'yellow'}}>inline Style in React</h2>
+      <button onClick={()=>updateTheme('gray','white')}>Gray Theme</button>
+      <button onClick={()=>updateTheme('white','black')}>Default Theme</button>
+      <button onClick={()=>setGrid(!grid)}>Toggle Grid</button>
+      <div style={{display:grid?'flex':'block',flexWrap:'wrap'}}>
+        <div style={cardStyle}>
+        <img style={{width:'190px'}} src="public/team-03.jpg" alt="vite" />
+        <div style={{padding:'5px'}}>
+          <h4>Raksha Jat</h4>
+          <p>Mern Stack Developer</p>
+          </div>
+      </div>
+       <div style={cardStyle}>
+        <img style={{width:'200px'}} src="public/team-03.jpg" alt="vite" />
+        <div style={{padding:'5px'}}>
+          <h4>Raksha Jat</h4>
+          <p>Mern Stack Developer</p>
+          </div>
+      </div>
+       <div style={cardStyle}>
+        <img style={{width:'200px'}} src="public/team-03.jpg" alt="vite" />
+        <div style={{padding:'5px'}}>
+          <h4>Raksha Jat</h4>
+          <p>Mern Stack Developer</p>
+          </div>
+      </div>
+       <div style={cardStyle}>
+        <img style={{width:'200px'}} src="public/team-03.jpg" alt="vite" />
+        <div style={{padding:'5px'}}>
+          <h4>Raksha Jat</h4>
+          <p>Mern Stack Developer</p>
+          </div>
+      </div>
+       <div style={cardStyle}>
+        <img style={{width:'200px'}} src="public/team-03.jpg" alt="vite" />
+        <div style={{padding:'5px'}}>
+          <h4>Raksha Jat</h4>
+          <p>Mern Stack Developer</p>
+          </div>
+      </div>
+       <div style={cardStyle}>
+        <img style={{width:'200px'}} src="public/team-03.jpg" alt="vite" />
+        <div style={{padding:'5px'}}>
+          <h4>Raksha Jat</h4>
+          <p>Mern Stack Developer</p>
+          </div>
+      </div>
+       <div style={cardStyle}>
+        <img style={{width:'200px'}} src="public/team-03.jpg" alt="vite" />
+        <div style={{padding:'5px'}}>
+          <h4>Raksha Jat</h4>
+          <p>Mern Stack Developer</p>
+          </div>
+      </div>
+      </div>
+     
+    </>
+  )
 }
-
 export default App;
-

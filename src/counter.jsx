@@ -8,6 +8,8 @@
 //         reverse(rcount-1);
 //     }
 
+import { useEffect } from "react";
+
 //     const updateCount=()=>{
 //         setCount(count+1);
 //     }
@@ -44,3 +46,36 @@
 //     )
 // }
 // export default Counter;
+
+const Counter=({counter,data})=>{
+    
+    const handleCounter=()=>{
+        console.log("handleCounter called");
+    }
+
+    const handleData=()=>{
+        console.log("handle data");
+    }
+    useEffect(()=>{
+       handleCounter();//run in mounting phase only
+      
+    },[])
+   useEffect(()=>{
+    handleData(); //runs in update phase
+   },[data])
+ 
+   useEffect(()=>{
+    return ()=>{
+        console.log('unmounting phase only');
+    }
+   },[])
+
+
+    return(
+        <div>
+            <h1>counter value : {counter}</h1>
+            <h1>data value : {data}</h1>
+        </div>
+    )
+}
+export default Counter;

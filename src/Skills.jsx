@@ -1,8 +1,6 @@
 
 import { useState } from "react";
-
-
-
+import User from "./user";
 function Skills(){
     const [skills, setSkills]=useState([]);
     const handleSkills=(event)=>{
@@ -64,6 +62,106 @@ export function RadioButon(){
              </select>
              <h2>Selected City : {city}</h2>
         </div>
+    )
+}
+
+export function Looping(){
+    const userData=[
+        {
+          name:'raksha',
+          age:22,
+          email:"raksha@gmail.com",
+          id:1
+        },
+         {
+          name:'priyanka',
+          age:24,
+          email:"pinku@gmail.com",
+          id:2
+        },
+         {
+          name:'akki',
+          age:20,
+          email:"akki@gmail.com",
+          id:3
+        },
+         {
+          name:'annu',
+          age:19,
+          email:"annu@gmail.com",
+          id:4
+        },
+        ]
+    return(
+        <div>
+            <h2>Loop in JSX with Map Function</h2>
+            
+            <table border="1">
+                <thead>
+                <tr>
+                    <td>id</td>
+                    <td>Name</td>
+                    <td>age</td>
+                    <td>email</td>
+                </tr>
+                </thead>
+                <tbody>
+             {
+                 userData.map((user)=>{
+                return(<tr key={user.id}>
+                    <td>{user.id}</td>
+                    <td>{user.name}</td>
+                    <td>{user.age}</td>
+                    <td>{user.email}</td>
+                </tr> );
+           })
+            }
+                </tbody>
+            </table>
+        </div>
+    )
+}
+
+export function ReuseComponentInLoop(){
+    const userData=[
+        {
+          name:'raksha',
+          age:22,
+          email:"raksha@gmail.com",
+          id:1
+        },
+         {
+          name:'priyanka',
+          age:24,
+          email:"pinku@gmail.com",
+          id:2
+        },
+         {
+          name:'akki',
+          age:20,
+          email:"akki@gmail.com",
+          id:3
+        },
+         {
+          name:'annu',
+          age:19,
+          email:"annu@gmail.com",
+          id:4
+        },
+        ]
+    
+    return(
+        <div>
+            <h1>Reuse Component in Loop</h1>
+              {
+             userData.map((user)=>{
+              return <div key={user.id}>
+                <User data={user}/></div>
+               
+             })
+        }
+            </div>
+      
     )
 }
 export default Skills;
